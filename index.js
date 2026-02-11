@@ -19,15 +19,12 @@
 // // const c =12;
 // console.log(c)
 
-
 // const a = 10.87
 // const b = 'Reshab'
 // const d = "KUmar"
 // const f = `Sah`
 // const c = true
 // const y = '10'
-
-
 
 // let x;
 // const y = NaN
@@ -40,7 +37,6 @@
 // const arr = [1,2,3,4,5, "Reshab"]
 // console.log(arr)
 
-
 // const x = 9
 // const y = '0'
 // const add = y + x;
@@ -49,11 +45,10 @@
 // const d = 20 % 3
 // console.log(d)
 
-
 // function something() {
-    //     const hii = false
-    // }
-    
+//     const hii = false
+// }
+
 //     const data = '10'
 //     const data1 = 10
 
@@ -78,38 +73,157 @@
 // D --> 50 to 55
 // E --> less than 50
 
-// less than 0 or greater than 100  --> Enter correct Value 
+// less than 0 or greater than 100  --> Enter correct Value
 
-let data = 42
+// let data = 42
 
-if( data % 2 == 0) {
-    console.log('Even Number')
-} else {
-    console.log('ODD Number')
+// if( data % 2 == 0) {
+//     console.log('Even Number')
+// } else {
+//     console.log('ODD Number')
+// }
+
+// let marks = prompt('Enter Marks: ');
+
+// if(marks <= 100 && marks >= 90) {
+//     console.log("O+")
+// } else if(marks <= 90 && marks >= 85) {
+//     console.log("A+")
+// } else if(marks <= 85 && marks >= 80) {
+//     console.log("A")
+// } else if(marks <= 80 && marks >= 75) {
+//     console.log("B+")
+// } else if(marks <= 75 && marks >= 70) {
+//     console.log("B")
+// } else if(marks <= 70 && marks >= 65) {
+//     console.log("C+")
+// } else if(marks <= 65 && marks >= 60) {
+//     console.log("C")
+// } else if(marks <= 60 && marks >= 55) {
+//     console.log("D+")
+// } else if(marks <= 55 && marks >= 50) {
+//     console.log("D")
+// } else if( marks < 50 && marks >= 0){
+//     console.log("Fail")
+// } else {
+//     console.log('Enter Correct Value')
+// }
+
+// const b = ["Reshab", "Kumar"]
+// const c = [true, false]
+
+// const mix = ["Reshab", 27, true, null, undefined]
+// console.log(mix.length)
+
+// for(let i = 0; i < a.length; i++) {
+//     console.log(a[i])
+// }
+
+// console.log(b)
+
+// for(i = a.length - 1; i >= 0; i++) {
+//     console.log(a[i])
+// }
+
+// for(i of a) {
+//     console.log(i)
+// }
+
+// console.log('-------------------')
+
+// for( i in a) {
+//     console.log(i)
+// }
+
+// const a = [1, 2, 3, 4, 5];
+
+// a.forEach((a) => {
+//   console.log(a);
+// });
+
+
+// let student = { name: "Alex", age: 20, grade: "A" };
+
+// for( i in student) {
+//     console.log(i)
+// }
+
+// const x = 5
+// x = 10
+// console.log(x)
+// const arr = ["Reshab", "Kumar", 27, true]
+// const obj = {fname: "Reshab", lname: "Kumar", age:27, isActive:true}
+
+// function inside Object 
+
+// // obj = [12,3,4,5]
+// obj = {fname: "Kumar", lname: "Reshab", age:27, isActive:false}
+// // obj.age = 28
+// // obj.hello = "Hii"
+// console.log(obj)
+
+
+// for(i in arr) {
+//     console.log(i)
+// }
+// for(i in obj) {
+//     console.log(i)
+// }
+
+
+// const x = 'Reshab'
+// const y = 'Kumar'
+
+
+// const c = `Hii I am ${x} ${y}`
+
+// console.log(typeof(c))
+
+// const x = 10
+// const y = 12
+// function add() {
+//     const c = x + y
+//     return c
+// }
+
+// console.log(add())
+
+
+const obj = {
+    fname: "Reshab", 
+    lname: "Kumar", 
+    age:27, 
+    isActive:true,
+    hii:function sayhii() {
+        console.log('Hii')
+    },
+    hello: function sayHello() {
+        console.log(`Hii, How are you ${this.fname}`)
+    }
+    
 }
 
-let marks = prompt('Enter Marks: ');
+// const x = 10
+// const y = '10'
 
-if(marks <= 100 && marks >= 90) {
-    console.log("O+")
-} else if(marks <= 90 && marks >= 85) {
-    console.log("A+")
-} else if(marks <= 85 && marks >= 80) {
-    console.log("A")
-} else if(marks <= 80 && marks >= 75) {
-    console.log("B+")
-} else if(marks <= 75 && marks >= 70) {
-    console.log("B")
-} else if(marks <= 70 && marks >= 65) {
-    console.log("C+")
-} else if(marks <= 65 && marks >= 60) {
-    console.log("C")
-} else if(marks <= 60 && marks >= 55) {
-    console.log("D+")
-} else if(marks <= 55 && marks >= 50) {
-    console.log("D")
-} else if( marks < 50 && marks >= 0){
-    console.log("Fail")
-} else {
-    console.log('Enter Correct Value')
-}
+// if(x === y) {
+//     console.log('Equal')
+// } else {
+//     console.log('NE')
+// }
+// sayHello()
+// console.log(obj.fname)
+// obj.hello
+
+// for(i in obj) {
+//     if(typeof(obj[i]) !== 'function' || typeof(obj[i]) !==  'boolean') {
+//         console.log(i)
+//     }
+// }
+
+
+// new Object
+
+
+
+

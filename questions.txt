@@ -1,0 +1,62 @@
+
+### **For Loop**
+
+1. Write a `for` loop that prints numbers from **1 to 10**.
+
+2. Write a `for` loop that prints **even numbers between 1 and 20**.
+
+3. Given an array `let nums = [2, 4, 6, 8];`, use a `for` loop to 
+calculate and print the **sum of all elements**.
+
+---
+
+### **for...in Loop**
+
+4. Given an object
+
+   ```js
+   let student = { name: "Alex", age: 20, grade: "A" };
+   ```
+
+   Use a `for...in` loop to print **all keys** of the object.
+
+5. Using the same `student` object, use a `for...in` loop to print **each key 
+and its value**.
+
+---
+
+### **for...of Loop**
+
+6. Given an array `let fruits = ["apple", "banana", "mango"];`, use a `for...of`
+ loop to print each fruit.
+
+7. Use a `for...of` loop to count how many **characters** are in the string `"hello"`.
+
+---
+
+### **forEach Loop**
+
+8. Given an array `let numbers = [1, 2, 3, 4];`, use `forEach` to print **each
+ number multiplied by 2**.
+
+9. Use `forEach` to print only the **odd numbers** from the 
+array `[5, 10, 15, 20, 25]`.
+
+10. Given an array
+
+    ```js
+    let names = ["Sam", "John", "Emma"];
+    ```
+
+    Use `forEach` to print:
+    **"Hello, <name>!"** for each name.
+
+---
+
+If you want, I can also:
+
+* add **answers**
+* turn these into **MCQs**
+* adjust difficulty (absolute beginner → interview level)
+
+Just say the word 🚀
