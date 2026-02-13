@@ -189,19 +189,19 @@
 // console.log(add())
 
 
-const obj = {
-    fname: "Reshab", 
-    lname: "Kumar", 
-    age:27, 
-    isActive:true,
-    hii:function sayhii() {
-        console.log('Hii')
-    },
-    hello: function sayHello() {
-        console.log(`Hii, How are you ${this.fname}`)
-    }
+// const obj = {
+//     fname: "Reshab", 
+//     lname: "Kumar", 
+//     age:27, 
+//     isActive:true,
+//     hii:function sayhii() {
+//         console.log('Hii')
+//     },
+//     hello: function sayHello() {
+//         console.log(`Hii, How are you ${this.fname}`)
+//     }
     
-}
+// }
 
 // const x = 10
 // const y = '10'
@@ -223,6 +223,55 @@ const obj = {
 
 
 // new Object
+
+// const fullName = "Reshab", "Kumar"
+
+// const arr = ["John", "Doe", 50, "New York"]
+
+var obj = {
+    fname: "John",
+    lname: "Doe",
+    age: 50,
+    city: "New York",
+    isActive:true,
+    hello: function fullName() {
+            c = `${this.fname} ${this.lname}`
+            return c
+        }
+    
+}
+
+// Object.seal(obj)
+Object.freeze(obj)
+obj.city = "Washington"
+console.log(obj)
+
+// const data1 = Object.keys(obj)
+// const data2 = Object.values(obj)
+
+
+// const data = Object.entries(obj)
+// console.log(data)
+
+
+// for(let i in obj) {
+//     if(typeof(obj[i]) !== 'function' && typeof(obj[i]) !== 'boolean') { 
+//         console.log(i)
+//     }  
+// }
+
+
+// console.log(obj.hello())
+
+// const obj1 = new Object({
+//     fname: "John",
+//     lname: "Doe",
+//     age: 50,
+//     city: "New York"
+// })
+
+// console.log(obj1)
+
 
 
 
