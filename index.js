@@ -228,7 +228,11 @@
 
 // const arr = ["John", "Doe", 50, "New York"]
 
-var obj = {
+// const x = 27
+// const data = `My age is ${x}`
+// console.log(data)
+
+const obj = {
     fname: "John",
     lname: "Doe",
     age: 50,
@@ -237,14 +241,59 @@ var obj = {
     hello: function fullName() {
             c = `${this.fname} ${this.lname}`
             return c
-        }
-    
+        },
+    address:{
+        address_line_1:"Coding Thinker, Kasturba Nagar",
+        address_line_1:"Chetak Bridge",
+        city:"Bhopal",
+        state:"MP",
+        pincode:462023
+    },
+    arr:[1,2,3,4,5],
+    data:[1,2,3,4,5]
 }
 
-// Object.seal(obj)
-Object.freeze(obj)
-obj.city = "Washington"
-console.log(obj)
+// for(i in obj) {
+//     if(!Array.isArray(obj[i])){
+//         console.log(i)
+//     }
+// }
+
+// function hello() {
+
+// }
+
+// function hello() {
+
+// }
+// var hii = () => {
+//     //
+//     return true
+// }
+
+// var hii = false
+//hoisting
+
+
+
+
+// const arr = [1,2,3,4,5,6]
+
+// arr[0]
+
+// for(i in arr) {
+//     console.log(arr[i])
+// }
+
+
+
+// == , ===
+
+
+// // Object.seal(obj)
+// Object.freeze(obj)
+// obj.city = "Washington"
+// console.log(obj)
 
 // const data1 = Object.keys(obj)
 // const data2 = Object.values(obj)
@@ -271,6 +320,11 @@ console.log(obj)
 // })
 
 // console.log(obj1)
+
+
+
+
+
 
 
 
