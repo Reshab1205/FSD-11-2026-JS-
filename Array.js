@@ -14,20 +14,36 @@
 //     console.log(arr[i])
 // }
 
-const arr = [1, 2, 3, 1, 2, 5, 7, 8, 3, 9, 5, 1, 2, 9];
-const data = [];
-for (let i = 0; i < arr.length; i++) {
-  let check = true;
-  for (let j = i + 1; j < arr.length; j++) {
-    if (arr[i] === arr[j]) {
-      check = false;
-    }
-  }
-  if (check == true) {
-    data.push(arr[i]);
-  }
-}
-console.log(data);
+const arr = [1, 2, -3, 1, 2, 5, -7, 8, 3, 9, 5, 1, 2, -9, true];
+const arr1 = ["Apple", "Ball"]
+
+// console.log(arr.at(2))
+// console.log((arr.concat(arr1)))
+arr.filter((data) => {
+  console.log(data)
+})
+// arr.forEach((item, index) => {
+//   console.log(`This is my arr value ${item} and this its index ${index}`)
+// })
+
+// arr.forEach(item => {
+//   if( typeof(item) === 'number' && item > 0) {
+//     console.log(item)
+//   }
+// })
+// const data = [];
+// for (let i = 0; i < arr.length; i++) {
+//   let check = true;
+//   for (let j = i + 1; j < arr.length; j++) {
+//     if (arr[i] === arr[j]) {
+//       check = false;
+//     }
+//   }
+//   if (check == true) {
+//     data.push(arr[i]);
+//   }
+// }
+// console.log(data);
 // for(i in arr) {
 //     const d = arr[i] * arr[i]
 //     arr1.push(d)
