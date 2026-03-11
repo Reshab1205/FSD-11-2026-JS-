@@ -4,23 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <p id="p1"></p>
-    <p id="p2">Hello</p>
-    <input id="i1" type="text" />
-    <button onclick="hii()">CLick</button>
-    <script>
-        document.getElementById('p1').innerText = 'Hiiii'
-        function hii() {
-            const data1 = document.getElementById('i1').value
-            console.log(data1)
+    <div>
+        <div>
+            <p>Bye</p>
+        </div>
+        <div>
+            <p>Good bYE</p>
+        </div>
+    </div>
+    <h1 id="h1">F11</h1>
+   <p id="p2">Hello</p>
+   <p id="p1"></p>
+   <input id="i1" type="text" />
+   <ul name="ul" id="ul"></ul>
+   <button onclick="changeHeading()" >Click to Change Heading</button>
+   <button onclick="addList()" >Add List</button>
+   <button onclick="msg()" >Click</button>
+
+   <script>
+
+    const arr = ['Bhopal', 'Indore', 'Ujjain', 'Gwalior', 'Jabalpur']
+    let i = 0
+
+    function changeHeading() {
+        document.getElementById('h1').innerText = arr[i]
+        // i = i + 1;
+        i++;
+        if(i >= arr.length) {
+            i = 0
         }
+    }
+
+    function addList() {
+        const parentEL = document.getElementById('ul')
+        let input = document.getElementById('i1').value
+        const createLi = document.createElement('li')
+        const editBtn = document.createElement('button')
+        editBtn.onclick = function () {
+            
+        }
+        const deleteBtn = document.createElement('button')
+        editBtn.textContent = 'Edit'
+        deleteBtn.textContent = 'Delete'
+        createLi.textContent = input
+        createLi.appendChild(editBtn)
+        createLi.appendChild(deleteBtn)
+        parentEL.appendChild(createLi)
+        document.getElementById('i1').value = " "
+    }
+    console.log(typeof (document.getElementById('p1')))
+
+    function msg() {
         const data = document.getElementById('p2').textContent
-        // document.
-        console.log(data)
-    </script>
+        document.getElementById('p1').innerText = data
+    }
+    document.getElementById('p1').innerText = 'Hiii'
+   </script>
    
 </body>
 </html>
