@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inp" type="text" placeholder="Enter Your Todo here ...." />
+    <button onclick="addTodo()" >Add Todo</button>
+    <!-- <p id="demo"></p> -->
+     <ul id="ul">
+        
+     </ul>
+    
+
+    <script>
+        function addTodo() {
+         const todo = document.getElementById('inp').value
+         const li = document.createElement('li')
+         li.textContent = todo
+         const PE = document.getElementById('ul')
+         PE.appendChild(li)
+         document.getElementById('inp').value = ""
+
+        }
+    </script>
+</body>
+</html>
