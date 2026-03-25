@@ -1,29 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <input id="inp" type="text" placeholder="Enter Your Todo here ...." />
-    <button onclick="addTodo()" >Add Todo</button>
+    <button onclick="addTodo()">Add Todo</button>
     <!-- <p id="demo"></p> -->
-     <ul id="ul">
-        
-     </ul>
-    
+    <ul id="ul"></ul>
 
     <script>
-        function addTodo() {
-         const todo = document.getElementById('inp').value
-         const li = document.createElement('li')
-         li.textContent = todo
-         const PE = document.getElementById('ul')
-         PE.appendChild(li)
-         document.getElementById('inp').value = ""
-
+      function addTodo() {
+        const todo = document.getElementById("inp").value;
+        if (todo.trim() === "") {
+          alert("Enter Your Data");
+          return;
         }
+        const li = document.createElement("li");
+        li.textContent = todo;
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        editBtn.onclick = function () {
+          const newData = prompt("Enter your new Data");
+          if(newData.trim() !== "" ) {
+              li.firstChild.textContent = newData
+          }
+        };
+        const PE = document.getElementById("ul");
+
+        delBtn.onclick = function () {
+          // li.remove()
+          PE.removeChild(li);
+        };
+        li.appendChild(editBtn);
+        li.appendChild(delBtn);
+        PE.appendChild(li);
+        document.getElementById("inp").value = "";
+      }
     </script>
-</body>
+  </body>
 </html>
