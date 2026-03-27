@@ -12,35 +12,50 @@
     <ul id="ul"></ul>
 
     <script>
+      const data = [];
       function addTodo() {
         const todo = document.getElementById("inp").value;
         if (todo.trim() === "") {
           alert("Enter Your Data");
           return;
         }
-        const li = document.createElement("li");
-        li.textContent = todo;
-        const editBtn = document.createElement("button");
-        editBtn.textContent = "Edit";
-        const delBtn = document.createElement("button");
-        delBtn.textContent = "Delete";
-        editBtn.onclick = function () {
-          const newData = prompt("Enter your new Data");
-          if(newData.trim() !== "" ) {
-              li.firstChild.textContent = newData
-          }
-        };
-        const PE = document.getElementById("ul");
 
-        delBtn.onclick = function () {
-          // li.remove()
-          PE.removeChild(li);
-        };
-        li.appendChild(editBtn);
-        li.appendChild(delBtn);
-        PE.appendChild(li);
+        data.push(todo);
+        localStorage.setItem("todo", JSON.stringify(data));
+        
+        // const editBtn = document.createElement("button");
+        // editBtn.textContent = "Edit";
+        // const delBtn = document.createElement("button");
+        // delBtn.textContent = "Delete";
+        // editBtn.onclick = function () {
+        //   const newData = prompt("Enter your new Data");
+        //   if (newData.trim() !== "") {
+        //     li.firstChild.textContent = newData;
+        //   }
+        // };
+
+        // delBtn.onclick = function () {
+        //   // li.remove()
+        //   PE.removeChild(li);
+        // };
+        // li.appendChild(editBtn);
+        // li.appendChild(delBtn);
+
         document.getElementById("inp").value = "";
+        // data = []
+        displayTodo()
       }
+
+      function displayTodo() {
+        const PE = document.getElementById("ul");
+        const getData = JSON.parse(localStorage.getItem("todo"));
+        for (i of getData) {
+          const li = document.createElement("li");
+          li.textContent = i;
+          PE.appendChild(li);
+        }
+      }
+      displayTodo()
     </script>
   </body>
 </html>
