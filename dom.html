@@ -4,58 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
   </head>
   <body>
     <input id="inp" type="text" placeholder="Enter Your Todo here ...." />
     <button onclick="addTodo()">Add Todo</button>
-    <!-- <p id="demo"></p> -->
+    <h3>Todos:-</h3>
     <ul id="ul"></ul>
 
     <script>
-      const data = [];
+      let data = JSON.parse(localStorage.getItem("todo")) || [];
       function addTodo() {
         const todo = document.getElementById("inp").value;
         if (todo.trim() === "") {
           alert("Enter Your Data");
           return;
         }
-
         data.push(todo);
         localStorage.setItem("todo", JSON.stringify(data));
-        
-        // const editBtn = document.createElement("button");
-        // editBtn.textContent = "Edit";
-        // const delBtn = document.createElement("button");
-        // delBtn.textContent = "Delete";
-        // editBtn.onclick = function () {
-        //   const newData = prompt("Enter your new Data");
-        //   if (newData.trim() !== "") {
-        //     li.firstChild.textContent = newData;
-        //   }
-        // };
-
-        // delBtn.onclick = function () {
-        //   // li.remove()
-        //   PE.removeChild(li);
-        // };
-        // li.appendChild(editBtn);
-        // li.appendChild(delBtn);
-
         document.getElementById("inp").value = "";
-        // data = []
-        displayTodo()
+        displayTodo();
       }
 
       function displayTodo() {
         const PE = document.getElementById("ul");
-        const getData = JSON.parse(localStorage.getItem("todo"));
-        for (i of getData) {
+        PE.innerHTML = "";
+        for (let i in data) {
+          const checkbox = document.createElement("input")
+          checkbox.type = 'checkbox'
           const li = document.createElement("li");
-          li.textContent = i;
+          const span = document.createElement("span")
+          span.textContent = data[i];
+          const editBtn = document.createElement("button");
+          editBtn.textContent = "Edit";
+          editBtn.onclick = function () {
+            const newData = prompt('Enter new Data', data[i])
+            data[i] = newData
+            localStorage.setItem('todo', JSON.stringify(data))
+            displayTodo()
+          }
+
+          const delBtn = document.createElement("button")
+          delBtn.textContent = 'Delete'
+          delBtn.onclick = function () {
+            data.splice(i,1)
+            localStorage.setItem('todo', JSON.stringify(data))
+            displayTodo()
+          }
+          li.appendChild(checkbox)
+          li.appendChild(span)
+          li.appendChild(editBtn);
+          li.appendChild(delBtn)
           PE.appendChild(li);
         }
       }
-      displayTodo()
+      window.onload = displayTodo;
     </script>
   </body>
 </html>
