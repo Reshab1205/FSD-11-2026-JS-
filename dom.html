@@ -8,6 +8,9 @@
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
+      /* span {
+        text-decoration: line-through;
+      } */
     </style>
   </head>
   <body>
@@ -24,7 +27,7 @@
           alert("Enter Your Data");
           return;
         }
-        data.push(todo);
+        data.push({todo:todo, completed:false});
         localStorage.setItem("todo", JSON.stringify(data));
         document.getElementById("inp").value = "";
         displayTodo();
@@ -34,31 +37,41 @@
         const PE = document.getElementById("ul");
         PE.innerHTML = "";
         for (let i in data) {
-          const checkbox = document.createElement("input")
-          checkbox.type = 'checkbox'
+          console.log(data[i])
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+
           const li = document.createElement("li");
-          const span = document.createElement("span")
-          span.textContent = data[i];
+          const span = document.createElement("span");
+          span.textContent = data[i].todo;
+          checkbox.onchange = function () {
+            if (checkbox.checked === true) {
+              
+              span.style.textDecoration = "line-through";
+            } else {
+              span.style.textDecoration = "none";
+            }
+          };
           const editBtn = document.createElement("button");
           editBtn.textContent = "Edit";
           editBtn.onclick = function () {
-            const newData = prompt('Enter new Data', data[i])
-            data[i] = newData
-            localStorage.setItem('todo', JSON.stringify(data))
-            displayTodo()
-          }
+            const newData = prompt("Enter new Data", data[i].todo);
+            data[i].todo = newData;
+            localStorage.setItem("todo", JSON.stringify(data));
+            displayTodo();
+          };
 
-          const delBtn = document.createElement("button")
-          delBtn.textContent = 'Delete'
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "Delete";
           delBtn.onclick = function () {
-            data.splice(i,1)
-            localStorage.setItem('todo', JSON.stringify(data))
-            displayTodo()
-          }
-          li.appendChild(checkbox)
-          li.appendChild(span)
+            data.splice(i, 1);
+            localStorage.setItem("todo", JSON.stringify(data));
+            displayTodo();
+          };
+          li.appendChild(checkbox);
+          li.appendChild(span);
           li.appendChild(editBtn);
-          li.appendChild(delBtn)
+          li.appendChild(delBtn);
           PE.appendChild(li);
         }
       }

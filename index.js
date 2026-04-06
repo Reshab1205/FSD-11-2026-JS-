@@ -321,7 +321,10 @@ const obj = {
 
 // console.log(obj1)
 
+const str = '24+32-46+80'
 
+const result = eval(10*12)
+console.log(result)
 
 
 
