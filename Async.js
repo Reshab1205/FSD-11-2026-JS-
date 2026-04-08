@@ -41,22 +41,81 @@
 // }, 3000)
 // console.log(add(2,5))
 
-console.log("Hello");
-setTimeout(() => {
-  console.log("Ist");
-  setTimeout(() => {
-    console.log("2nd");
-    setTimeout(() => {
-      console.log("3rd");
-      setTimeout(() => {
-        console.log("4th");
-      }, 5000);
-    });
-  }, 2000);
-}, 1000);
+// console.log("Hello");
+// setTimeout(() => {
+//   console.log("Ist");
+//   setTimeout(() => {
+//     console.log("2nd");
+//     setTimeout(() => {
+//       console.log("3rd");
+//       setTimeout(() => {
+//         console.log("4th");
+//       }, 5000);
+//     });
+//   }, 2000);
+// }, 1000);
 
-console.log("Finish");
+// console.log("Finish");
 
-Promise
+// Promise
 
-async/await
+// async/await
+
+// function hello() {
+//   console.log('Hello')
+// }
+// // setTimeout(() => {
+// //   hello()
+// // }, 1000)
+// let count = 0;
+// const x = setInterval(() => {
+//   hello();
+//   count++;
+//   if(count >= 5) {
+//     clearInterval(x)
+//     console.log('Function ran 5 times')
+//   }
+// }, 1000)
+
+// const btn = document.querySelector('button')
+// btn.addEventListener('click', () => {
+//   btn.textContent
+// })
+// const data = '2+33-4*7/3'
+// const inp = data
+
+// const result = eval(inp)
+// console.log(result)
+
+// Call apply bind
+
+const obj = {
+  fname: "Reshab",
+  age: 27,
+  greet: function (city, city1) {
+    console.log("My Name is " + this.fname + " my age is " + this.age + " i am from " + city + city1);
+  },
+};
+const user = { fname: "Ravi", age: 28 };
+const result = obj.greet.bind(user, ["Bhopal"])
+console.log(typeof result)
+result()
+
+const user1 = { fname: "Baibhav" };
+const users = [
+  { fname: "Ravi", age: 28, city: "Delhi" },
+  { fname: "Baibhav", age: 27, city: "HYD" },
+  { fname: "Avinash", age: 28, city: "BEN" },
+];
+
+// for(let i of users) {
+//   // console.log(i)
+//   obj.greet.apply(i, [i.city])
+// }
+// obj.greet.call(user);
+
+const app = function () {
+  const data = 'Hello'
+  return data
+}
+console.log(app())
