@@ -164,19 +164,19 @@ for(let i of arr) {
 // Happy New Year Reshab
 
 
-function sendSmsService(name, callback) {
-  console.log(`Sending MSg to ${name}`)
-  callback(name)
-}
+// function sendSmsService(name, callback) {
+//   console.log(`Sending MSg to ${name}`)
+//   callback(name)
+// }
 
-function sendEmailService() {
+// function sendEmailService() {
 
-}
+// }
 
-function sendNewYearGreeting(name) {
-  console.log(`Happy New Year ${name}`)
-}
+// function sendNewYearGreeting(name) {
+//   console.log(`Happy New Year ${name}`)
+// }
 
-function sendDiwaliGreeting(name) {
-  console.log(`Happy Diwali ${name}`)
-}
+// function sendDiwaliGreeting(name) {
+//   console.log(`Happy Diwali ${name}`)
+// }
