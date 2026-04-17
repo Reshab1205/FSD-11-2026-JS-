@@ -62,22 +62,41 @@
 // .catch((err) => console.log(err))
 // XMl 
 
-const result = fetch('https://jsonplaceholder.typicode.com/posts');
+// const result = fetch('https://jsonplaceholder.typicode.com/posts');
 
-// console.log('Ist',result)
+// // console.log('Ist',result)
 
-result
-.then((res) => {
-    // console.log(res.body)
-    if(!res.ok) {
-        console.log('Error')
-        return
-    }
-     return res.json()
-})
-.then((data) => console.log(data))
-.catch((err) => console.log(err))
+// result
+// .then((res) => {
+//     // console.log(res.body)
+//     if(!res.ok) {
+//         console.log('Error')
+//         return
+//     }
+//      return res.json()
+// })
+// .then((data) => console.log(data))
+// .catch((err) => console.log(err))
 
 // console.log('2nd',result)
 
+// let str = 'reshab'
 
+// str = Number(str)
+// console.log(str)
+
+
+
+// new Promise((resolve, reject) => {
+//     setTimeout(() => {resolve('Hello')}, 500)
+//     setTimeout(() => {reject('Failed')})
+// }).then((data) => console.log(data))
+// .catch((err) => console.log(err))
+const lat = 23;
+const lng = 76;
+const apiKey = '23a13401e6964d149835d8022a7fa787'
+const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`
+fetch(url)
+.then((res) => res.json())
+.then((result) => console.log(result.results[0].formatted))
+.catch((err) =>console.log(err) )
