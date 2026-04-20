@@ -92,11 +92,69 @@
 //     setTimeout(() => {reject('Failed')})
 // }).then((data) => console.log(data))
 // .catch((err) => console.log(err))
+// const lat = 23;
+// const lng = 76;
+// const apiKey = '23a13401e6964d149835d8022a7fa787'
+// const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`
+// fetch(url)
+// .then((res) => res.json())
+// .then((result) => console.log(result.results[0].formatted))
+// .catch((err) =>console.log(err) )
+
+
+// const arr = [1,2,3,4,5]
+// const arr1 = [6,7,8,9,10]
+// const arr2 = [11,12,13,14,15]
+
+// for(let i in arr) {
+//     console.log(i)
+//     console.log(arr[i])
+// }
+
+// for(let i in arr1) {
+//     console.log(i)
+//     console.log(arr1[i])
+// }
+
+// for(let i in arr2) {
+//     console.log(i)
+//     console.log(arr2[i])
+// }
+
+// console.log('a')
+// console.log('b')
+// console.log('c')
+// console.log('d')
+// console.log('e')
+// Promise.resolve('Hello').then((data) => {console.log(data)})
+// setTimeout(() => {
+//     console.log('f')
+// }, 10000)
+// console.log('g')
+// console.log('h')
+// console.log('i')
+// setTimeout(() => {
+//     console.log('j')
+// },2000)
+
+
 const lat = 23;
 const lng = 76;
 const apiKey = '23a13401e6964d149835d8022a7fa787'
 const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`
-fetch(url)
-.then((res) => res.json())
-.then((result) => console.log(result.results[0].formatted))
-.catch((err) =>console.log(err) )
+
+async function fetchLocation() {
+    try {
+        const data =  await fetch(url)
+        const result = await data.json()
+        console.log(result.results[0].formatted)
+        
+    } catch(err) {
+        console.log(err)
+    }
+    // .then((res) => res.json())
+    // .then((result) => console.log(result.results[0].formatted))
+    // .catch((err) =>console.log(err) )
+}
+
+fetchLocation()
