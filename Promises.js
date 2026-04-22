@@ -2,8 +2,6 @@
 //  .then((data) => console.log(data))
 //  .catch((err) => console.log('err',err))
 
-
-
 // const result = new Promise((resolve,reject) => {
 //     let success = true
 //     if(success) {
@@ -27,7 +25,6 @@
 
 // fetch()
 
-
 // const obj = {
 //     age:28,
 //     greet: function() {
@@ -47,7 +44,6 @@
 //     console.log('False')
 // }
 
-
 // const x = new Promise((resolve, reject) => {
 //     let success = true
 //     if(success) {
@@ -60,7 +56,7 @@
 // x
 // .then((data) => console.log(data))
 // .catch((err) => console.log(err))
-// XMl 
+// XMl
 
 // const result = fetch('https://jsonplaceholder.typicode.com/posts');
 
@@ -85,8 +81,6 @@
 // str = Number(str)
 // console.log(str)
 
-
-
 // new Promise((resolve, reject) => {
 //     setTimeout(() => {resolve('Hello')}, 500)
 //     setTimeout(() => {reject('Failed')})
@@ -100,7 +94,6 @@
 // .then((res) => res.json())
 // .then((result) => console.log(result.results[0].formatted))
 // .catch((err) =>console.log(err) )
-
 
 // const arr = [1,2,3,4,5]
 // const arr1 = [6,7,8,9,10]
@@ -137,24 +130,22 @@
 //     console.log('j')
 // },2000)
 
-
 const lat = 23;
 const lng = 76;
-const apiKey = '23a13401e6964d149835d8022a7fa787'
-const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`
+const apiKey = "23a13401e6964d149835d8022a7fa787";
+const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`;
 
 async function fetchLocation() {
     try {
-        const data =  await fetch(url)
+        const data = await fetch(url)
         const result = await data.json()
         console.log(result.results[0].formatted)
-        
+        // .then((res) => res.json())
+        // .then((result) => console.log(result.results[0].formatted))
+        // .catch((err) => console.log(err));
     } catch(err) {
         console.log(err)
     }
-    // .then((res) => res.json())
-    // .then((result) => console.log(result.results[0].formatted))
-    // .catch((err) =>console.log(err) )
 }
 
-fetchLocation()
+fetchLocation();
