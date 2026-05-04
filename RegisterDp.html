@@ -18,8 +18,9 @@
             const file = document.getElementById('file').files[0]
             const url = `https://api.cloudinary.com/v1_1/dbc1h4dym/upload`
             const formData = new FormData()
-            formData.append('upload_preset', 'chat-app')
+            formData.append('upload_preset', 'my_result')
             formData.append('file', file)
+            // console.log(formData)
             try {
                const res =  await fetch(url, {
                     method:'POST',
@@ -31,6 +32,7 @@
                     name:name,
                     img:data.secure_url
                 }
+                localStorage.setItem('data', JSON.stringify(userData))
                 console.log(data.secure_url)
             } catch(err) {
                 console.log(err)
